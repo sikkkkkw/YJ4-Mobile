@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1214스마트폰</title>
+    
+    <style>
+        /* 폰트 */
+        @font-face {
+            font-family: 'Binggrae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'LINESeedKR-Bd';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+        }
+       /* 초기화 */
+       *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+       }
+       li{
+        list-style: none;
+       }
+       a{
+        text-decoration: none;
+       }
+       /* wrap 토글 메뉴 */
+       #wrap #main_header{
+        background-image: url("./imgs/header_background.png");
+        text-align: center;
+        /* width: 960px;
+        margin: 0 auto; 중앙정렬 */
+        position: relative;/* 상대적으로 다르다면 */
+       }
+       #main_header a,#main_header label{
+        display: block;
+        height: 32px;
+        position: absolute; /* 절대값 */ 
+
+       }
+       #main_header a{
+        width: 62px;
+        left: 5px;
+        top: 7px;
+       }
+       #main_header label{
+        width: 32px;
+        right: 5px;
+        top: 7px;
+       }
+       #font1{
+        font-size: 16px;
+       }
+       /* 스프라이트 이미지 */
+       #main_header a{
+        background-image: url("imgs/css_sprites.png");
+        background-position: 0px 0px; /* 기본위치가 0,0이기 때문에 생략가능 */
+        text-indent: -99999px; /* 글자들여쓰기 브라우저 바깥으로 글자숨김 */
+       }
+       #main_header label{
+        background-image: url("imgs/css_sprites.png");
+        background-position: -62px; /* 스프라이트 이미지를 사용했기 때문에 -62px 밀면 햄버거 바가 나옴 */
+        text-indent: -99999px; /* 글자내어쓰기 브라우저 바깥으로 글자숨김 */
+       }
+       /* 토글 레이아웃 구현 */
+       #toggle{
+        display: none;
+       }
+       #toggle_gnb_wrap{
+        display: none;
+       }
+       #toggle:checked + #wrap #toggle_gnb_wrap{
+        display: block;
+       }
+       /* 레이아웃 색상 */
+       #toggle_gnb_wrap{
+        background: #363636;
+        padding: 15px;
+       }
+       #toggle_gnb{
+        background: #ffffff;
+        padding: 5px;
+       }
+       #toggle_gnb ul{
+        overflow: hidden;  /* 부모 */
+       }
+       #toggle_gnb ul li{
+        float: left; /* float 줘서 뜨기 때문에 부모한테 overflow: hidden; 줘야됨 */
+        width: 12.5%;
+        border: 1px solid black;
+        text-align: center;
+       }
+       /* wrap 네비게이션(1) */
+       #top_gnb{
+        /* overflow: hidden; */
+        display: flex;/* 부모한테 정렬함 */
+        background: #b42111;
+       }
+       #top_gnb >div{
+        float: left;
+        width: 25%;
+        height: 35px;
+        line-height: 35px; /* div 중앙 */
+        text-align: center;
+        border: 1px solid black;
+        font-size: 12px;
+       }
+       #top_gnb > div > a{
+        display: block;
+        color: white;
+       }
+    </style>
+</head>
+<body>
+    <!-- 토글 메뉴 -->
+    <input id="toggle" type="checkbox">
+    <!-- wrap -->
+    <div id="wrap">
+        <!-- wrap 토글 메뉴-->
+        <header id="main_header">
+            <a href="#" class="left">Main</a>
+            <h1 id="font1">Yu-Gi-Oh!<br>유희왕 덱 연구소</h1>
+            <label class="right" for="toggle">Toggle</label>
+        </header>
+        <!-- wrap 토글 메뉴 클릭시 연동되는 풀다운 메뉴-->
+        <div id="toggle_gnb_wrap">  <!-- 바깥배경 -->
+            <div id="toggle_gnb"> <!-- 안배경 -->
+                <ul>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                    <li><a href="#">버튼</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- wrap 네비게이션(1)-->
+        <nav id="top_gnb">
+            <div><a href="#">전개</a></div>
+            <div><a href="#">미드레인지</a></div>
+            <div><a href="#">운영</a></div>
+            <div><a href="#">함떡</a></div>
+            <div><a href="#">메타비트</a></div>
+        </nav>
+        <!-- wrap 네비게이션(2)-->
+        <nav id="bottom_gnb">bottom_gnb</nav>
+        <!-- wrap 섹션-->
+        <section id="main_section">main_section</section>
+        <!-- wrap 푸터-->
+        <footer id="main_footer">main_footer</footer>
+    </div>
+</body>
+</html>
