@@ -241,6 +241,7 @@
         border-top: 3px solid black;
         text-align: center;
       }
+
       .star-color {
         color: #ffa500;
       }
@@ -274,6 +275,16 @@
         margin: 0 auto; /* 가운데 정렬을 위한 마진 설정 */
         border-radius: 10px; /* 테두리를 둥글게 만듭니다. */
         overflow: hidden; /* 테두리를 넘어가는 부분을 숨깁니다. */
+      }
+      .social-links a {
+        color: #000000;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 18px;
+      }
+
+      .social-links a:hover {
+        text-decoration: underline;
       }
     </style>
   </head>
@@ -1479,7 +1490,15 @@
       <!-- wrap 푸터-->
       <footer id="main_footer">
         <h3>HTML5 + CSS3 Basic</h3>
-        <address>webstie Layout Basic</address>
+        <div class="social-links">
+          <a href="https://www.facebook.com/yourpage" target="_blank"
+            >Facebook</a
+          >
+          <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a>
+          <a href="https://www.instagram.com/youraccount" target="_blank"
+            >Instagram</a
+          >
+        </div>
       </footer>
     </div>
     <script src="po.js"></script>
