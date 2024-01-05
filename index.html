@@ -318,6 +318,24 @@
         color: #fff;
 
       }
+      @media screen and (min-width: 767px) {
+        .main_article .article-content {
+          flex-direction: row; /* 화면이 767px 이하일 때만 수평으로 배치 */
+        }
+
+        /* 이미지와 텍스트 위치 바꾸기 */
+        .main_article .article-content img {
+          order: 1; 
+          width: 150px;
+        }
+
+        .main_article .article-content .article-text {
+          order: 2;
+        }
+        img{
+          width: 150px;
+        }
+      }
 
     </style>
   </head>
